@@ -80,14 +80,14 @@ kubectl get pods -A
 sudo tail -f /var/lib/rancher/k3s/server/logs/audit.log
 ```
 
-## Onboard K3S server to Azure Arc servers
+## Onboard K3S control plane server and agents to Azure Arc servers
 Make sure to register the following resource providers on the subscription where the Azure Arc server resource will be created.
 - Microsoft.HybridCompute
 - Microsoft.GuestConfiguration
 - Microsoft.HybridConnectivity
 
 
-Download Arc Server onboarding script to Linux server
+Download Arc Server onboarding script to K3S control plane server and agents
 ```
 wget https://raw.githubusercontent.com/sukster/azure-arc-k3s/refs/heads/main/az_connect_linux.sh
 ```
@@ -106,4 +106,4 @@ Go to Azure -> Defender for Cloud -> Environment Settings -> Your Subscription a
 First create a Log Analytics Workspace that will be used for Kubernetes operational monitoring. Then go to Azure -> Monitor -> Insights -> Containers. Enable monitoring under "Unmonitored clusters". Under Monitor Settings select "Customize capabilities" and select the Log Analytics Workspace that you created. Ensure that the cluster appears under the Monitored clusters.
 
 ## Optional: Deploy Kubernetes Goat
-For security testing install Kubernetes Goat: https://github.com/madhuakula/kubernetes-goat
+For security testing deploy Kubernetes Goat to K3S: https://github.com/madhuakula/kubernetes-goat
