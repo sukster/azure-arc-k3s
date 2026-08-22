@@ -1,7 +1,8 @@
 # Deploy and connect K3S to Azure Arc
 
-## Install K3S
+## Install K3S on Linux server
 Use the official quick start guide: https://docs.k3s.io/quick-start
+I personally used Ubuntu server 22.04 LTS.
 
 ## Create service principal in Azure Arc
 Go to Azure Arc –> Additional Setup -> Service Principals
@@ -13,3 +14,8 @@ Make sure to register the following resource providers on the subscription where
 - Microsoft.KubernetesConfiguration
 - Microsoft.ExtendedLocation
 
+## Create Resource Group
+Only necessary if a resource group doesn't exist.
+
+## Download Script to Linux server
+Download the script using this link: 
