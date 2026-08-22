@@ -76,15 +76,15 @@ Make sure to register the following resource providers on the subscription where
 - Microsoft.HybridConnectivity
 
 
-## Download Arc Server onboarding script to Linux server
-wget https://raw.githubusercontent.com/sukster/azure-arc-k3s/refs/heads/main/az_connect_linux.sh
-
+Download Arc Server onboarding script to Linux server
+<br>wget https://raw.githubusercontent.com/sukster/azure-arc-k3s/refs/heads/main/az_connect_linux.sh
+<br>
 Make sure to update the environment variables in the script.
 
 
-## Run the script on K3S server
-Run the script as a regular user (not with sudo).
-
+Run the script on K3S server
+<br>Run the script as a regular user (not with sudo).
+<br>
 ./az_connect_linux.sh
 
 
