@@ -31,7 +31,7 @@ wget https://raw.githubusercontent.com/sukster/azure-arc-k3s/refs/heads/main/az_
 Make sure to update the environment variables in the script.
 
 
-## Run the script on K3S server
+## Run the script on K3S control plane server
 Run the script as a regular user (not with sudo).
 ```
 ./az_connect_K3S.sh
