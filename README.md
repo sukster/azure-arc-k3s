@@ -74,7 +74,7 @@ kube-apiserver-arg:
 ```
 sudo systemctl restart k3s
 ```
-7. Verify audit logs are working
+7. Verify audit logs are working locally
 ```
 kubectl get pods -A
 sudo tail -f /var/lib/rancher/k3s/server/logs/audit.log
