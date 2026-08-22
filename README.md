@@ -5,7 +5,7 @@ Use the official quick start guide: https://docs.k3s.io/quick-start
 I personally used Ubuntu server 22.04 LTS.
 
 ## Create service principal in Azure Arc
-Go to Azure Arc –> Additional Setup -> Service Principals
+Go to Azure Arc –> Additional Setup -> Service Principals.
 Save the App ID and Secret to a save location. We will need it for the script later.
 
 ## Register Resource Providers on Subscription
