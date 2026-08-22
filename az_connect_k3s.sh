@@ -48,4 +48,6 @@ sudo rm az.sh
 
 echo "Connecting the cluster to Azure Arc"
 az connectedk8s connect --name $arcClusterName --resource-group $resourceGroup
+
+echo "Installing the Azure Monitor extension for audit logs"
 az k8s-extension create --name "aksarc-azuremonitor" --cluster-name $arcClusterName --resource-group $resourceGroup --cluster-type connectedClusters --extension-type Microsoft.AKSArc.AzureMonitor
