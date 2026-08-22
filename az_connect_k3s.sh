@@ -35,6 +35,7 @@ sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
 sudo chown -R "$USER:$USER" ~/.kube
 chmod 700 ~/.kube
 chmod 600 ~/.kube/config
+export KUBECONFIG=$HOME/.kube/config
 echo 'export KUBECONFIG=$HOME/.kube/config' >> ~/.bashrc
 mkdir -p ~/.azure
 sudo chown -R "$USER:$USER" ~/.azure
