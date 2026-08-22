@@ -20,14 +20,14 @@ Make sure to register the following resource providers on the subscription where
 Only necessary if a resource group doesn't exist.
 
 
-## Download Script to Linux server
+## Download K3S onboarding script to Linux server
 wget https://raw.githubusercontent.com/sukster/azure-arc-k3s/refs/heads/main/az_connect_k3s.sh
 
 Make sure to update the environment variables in the script.
 
 
 ## Run the script on K3S server
-Run the script as a regular user (not with sudo). Alternatively run each script line as a regular user separately in the shell.
+Run the script as a regular user (not with sudo).
 
 ./az_connect_K3S.sh
 
@@ -76,6 +76,16 @@ Make sure to register the following resource providers on the subscription where
 - Microsoft.HybridConnectivity
 
 
+## Download Arc Server onboarding script to Linux server
+wget https://raw.githubusercontent.com/sukster/azure-arc-k3s/refs/heads/main/az_connect_linux.sh
+
+Make sure to update the environment variables in the script.
+
+
+## Run the script on K3S server
+Run the script as a regular user (not with sudo).
+
+./az_connect_linux.sh
 
 
 ## Optional: Deploy Kubernetes Goat
