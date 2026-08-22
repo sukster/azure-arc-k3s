@@ -25,26 +25,31 @@ Only necessary if a resource group doesn't exist.
 
 
 ## Download K3S onboarding script to Linux server
+```
 wget https://raw.githubusercontent.com/sukster/azure-arc-k3s/refs/heads/main/az_connect_k3s.sh
-
+```
 Make sure to update the environment variables in the script.
 
 
 ## Run the script on K3S server
 Run the script as a regular user (not with sudo).
-
+```
 ./az_connect_K3S.sh
-
+```
 
 ## Enable Defender for Containers
 Go to Azure -> Defender for Cloud -> Environment Settings -> Your Subscription and turn on Defender for Containers plan.
 
 
 ## Configure K3s audit logging
-1. Create a directory for the audit logs: 
-<br>sudo mkdir -p -m 700 /var/lib/rancher/k3s/server/logs
-2. Create audit.yaml file and paste the following code in it:
-<br> sudo nano /var/lib/rancher/k3s/server/audit.yaml
+1. Create a directory for the audit logs:
+```
+sudo mkdir -p -m 700 /var/lib/rancher/k3s/server/logs
+```
+3. Create audit.yaml file and paste the following code in it:
+```
+sudo nano /var/lib/rancher/k3s/server/audit.yaml
+```
 ```
 apiVersion: audit.k8s.io/v1
 kind: Policy
@@ -52,7 +57,9 @@ rules:
   - level: Metadata
 ```
 3. Create config.yaml file and paste the following code in it:
-<br> sudo nano /etc/rancher/k3s/config.yaml
+```
+sudo nano /etc/rancher/k3s/config.yaml
+```
 ```
 kube-apiserver-arg:
   - audit-log-path=/var/lib/rancher/k3s/server/logs/audit.log
@@ -62,8 +69,10 @@ kube-apiserver-arg:
   - audit-log-maxsize=100
 ```
 4. Restart K3S
-<br> sudo systemctl restart k3s
-5. Verify audit logs are working
+```
+sudo systemctl restart k3s
+```
+7. Verify audit logs are working
 ```
 kubectl get pods -A
 sudo tail -f /var/lib/rancher/k3s/server/logs/audit.log
@@ -81,15 +90,16 @@ Make sure to register the following resource providers on the subscription where
 
 
 Download Arc Server onboarding script to Linux server
-<br>wget https://raw.githubusercontent.com/sukster/azure-arc-k3s/refs/heads/main/az_connect_linux.sh
-<br>
+```
+wget https://raw.githubusercontent.com/sukster/azure-arc-k3s/refs/heads/main/az_connect_linux.sh
+```
 Make sure to update the environment variables in the script.
 
 
 <br>Run the script as a regular user (not with sudo).
-<br>
+```
 ./az_connect_linux.sh
-
+```
 
 ## Optional: Deploy Kubernetes Goat
 For security testing install Kubernetes Goat: https://github.com/madhuakula/kubernetes-goat
