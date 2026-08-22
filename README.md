@@ -2,7 +2,7 @@
 
 
 ## Install K3S on Linux server
-Use the official quick start guide: https://docs.k3s.io/quick-start. I personally used Ubuntu server 22.04 LTS.
+Use the official quick start guide: https://docs.k3s.io/quick-start. I tested this on Ubuntu server 22.04 LTS.
 
 
 ## Create service principal in Azure Arc
