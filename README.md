@@ -62,7 +62,7 @@ kube-apiserver-arg:
 5. Verify audit logs are working
 ```
 kubectl get pods -A
-sudo tail /var/lib/rancher/k3s/server/logs/audit.log
+sudo tail -f /var/lib/rancher/k3s/server/logs/audit.log
 ```
 
 ## Enable Control Plane Monitoring
