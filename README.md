@@ -69,7 +69,7 @@ sudo tail -f /var/lib/rancher/k3s/server/logs/audit.log
 First create a Log Analytics Workspace that will be used for Kubernetes operational monitoring. Then go to Azure -> Monitor -> Insights -> Containers. Enable monitoring under "Unmonitored clusters". Under Monitor Settings select "Customize capabilities" and select the Log Analytics Workspace that you created. Ensure that the cluster appears under the Monitored clusters.
 
 
-## Onboard K3S server to Azure Arc
+## Onboard K3S server to Azure Arc servers
 Make sure to register the following resource providers on the subscription where the Azure Arc server resource will be created.
 - Microsoft.HybridCompute
 - Microsoft.GuestConfiguration
