@@ -36,7 +36,19 @@ Run the script as a regular user (not with sudo). Alternatively run each script 
 Go to Azure -> Defender for Cloud -> Environment Settings -> Your Subscription and turn on Defender for Containers plan.
 
 
-## Enable Container monitoring
+## Enable Control Plan Monitoring
+This step will enable collection of audit events from K3S which are useful for security investigations.
+1. Download the ARM template to Azure admin's computer: https://raw.githubusercontent.com/sukster/azure-arc-k3s/refs/heads/main/audit_diagnostic_settings.json
+2. Go to Azure and search for "Deploy a custom template"
+3. Select "Build your own template in the editor"
+4. Erase the sample code and paste the contents of the audit_diagnostic_settings.json and then click Save
+5. Select the subscription and resource group where the Azure Arc Kubernetes cluster is placed.
+6. For Workspace Id insert the resource Id for the Sentinel's Log Analytics Workspace. You can find it by going to the Log Analytics Workspace overview page and click the "JSON view".
+<img width="862" height="361" alt="image" src="https://github.com/user-attachments/assets/5f1dca87-642b-4795-beb7-ab3ab61b3766" />
+
+
+
+## Optional: Enable Operational Monitoring
 First create a Log Analytics Workspace that will be used for Kubernetes operational monitoring. Then go to Azure -> Monitor -> Insights -> Containers. Enable monitoring under "Unmonitored clusters". Under Monitor Settings select "Customize capabilities" and select the Log Analytics Workspace that you created. Ensure that the cluster appears under the Monitored clusters.
 
 
