@@ -36,10 +36,6 @@ Run the script as a regular user (not with sudo). Alternatively run each script 
 Go to Azure -> Defender for Cloud -> Environment Settings -> Your Subscription and turn on Defender for Containers plan.
 
 
-## Enable Audit Log monitoring
-Follow the instructions to send control plane audit logs to Microsoft Sentinel: https://learn.microsoft.com/en-us/azure/aks/aksarc/kubernetes-monitor-audit-events. Run these commands from the K3S Server.
-
-
 ## Enable Container monitoring
 First create a Log Analytics Workspace that will be used for Kubernetes operational monitoring. Then go to Azure -> Monitor -> Insights -> Containers. Enable monitoring under "Unmonitored clusters". Under Monitor Settings select "Customize capabilities" and select the Log Analytics Workspace that you created. Ensure that the cluster appears under the Monitored clusters.
 
