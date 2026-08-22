@@ -39,14 +39,24 @@ Go to Azure -> Defender for Cloud -> Environment Settings -> Your Subscription a
 ## Configure K3s audit logging
 1. Create a directory for the audit logs: 
 <br>sudo mkdir -p -m 700 /var/lib/rancher/k3s/server/logs
-2. Create audit.yaml file and paste the following code in it
+2. Create audit.yaml file and paste the following code in it:
+<br> sudo nano /var/lib/rancher/k3s/server/audit.yaml
 ```
 apiVersion: audit.k8s.io/v1
 kind: Policy
 rules:
   - level: Metadata
 ```
-
+3. Create config.yaml file and paste the following code in it:
+<br> sudo nano /etc/rancher/k3s/config.yaml
+```
+kube-apiserver-arg:
+  - audit-log-path=/var/lib/rancher/k3s/server/logs/audit.log
+  - audit-policy-file=/var/lib/rancher/k3s/server/audit.yaml
+  - audit-log-maxage=30
+  - audit-log-maxbackup=10
+  - audit-log-maxsize=100
+```
 
 ## Enable Control Plane Monitoring
 This step will enable collection of audit events from K3S which are useful for security investigations.
