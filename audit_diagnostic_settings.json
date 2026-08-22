@@ -1,0 +1,44 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "clusterName": {
+            "type": "String"
+        },
+        "workspaceId": {
+            "type": "String"
+        },
+        "settingName": {
+            "type": "String"
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Insights/diagnosticSettings",
+            "apiVersion": "2021-05-01-preview",
+            "scope": "[format('Microsoft.Kubernetes/connectedClusters/{0}', parameters('clusterName'))]",
+            "name": "[parameters('settingName')]",
+            "properties": {
+                "workspaceId": "[parameters('workspaceId')]",
+                "logs": [
+                    {
+                        "category": "kube-apiserver",
+                        "enabled": true
+                    },
+                    {
+                        "category": "kube-audit",
+                        "enabled": true
+                    },
+                    {
+                        "category": "kube-audit-admin",
+                        "enabled": false
+                    },
+                    {
+                        "category": "guard",
+                        "enabled": true
+                    }
+                ]
+            }
+        }
+    ]
+}
