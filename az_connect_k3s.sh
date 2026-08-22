@@ -30,6 +30,7 @@ az login --service-principal --username $appId --password=$password --tenant $te
 echo "Coping config files and setting permissions"
 sudo cat <<EOT >> az.sh
 #!/bin/sh
+sudo chmod 644 /etc/rancher/k3s/k3s.yaml
 mkdir -p ~/.kube
 sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
 sudo chown -R "$USER:$USER" ~/.kube
