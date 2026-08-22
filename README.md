@@ -38,7 +38,7 @@ Go to Azure -> Defender for Cloud -> Environment Settings -> Your Subscription a
 
 ## Configure K3s audit logging
 1. Create a directory for the audit logs: 
-..sudo mkdir -p -m 700 /var/lib/rancher/k3s/server/logs
+<br>sudo mkdir -p -m 700 /var/lib/rancher/k3s/server/logs
 
 
 ## Enable Control Plane Monitoring
