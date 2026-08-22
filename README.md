@@ -6,7 +6,11 @@ Use the official quick start guide: https://docs.k3s.io/quick-start. I tested th
 
 
 ## Create service principal in Azure Arc
-Go to Azure Arc –> Additional Setup -> Service Principals. For "Scope assignment level" select only the Resource Group. For "Roles" select Kubernetes Cluster - Azure Arc Onboarding. Save the App ID and Secret to a save location. We will need it for the script later.
+Go to Azure Arc –> Additional Setup -> Service Principals. For "Scope assignment level" select only the Resource Group. For "Roles" select:
+- Azure Connected Machine Onboarding
+- Kubernetes Cluster - Azure Arc Onboarding
+<br>
+Save the App ID and Secret to a save location. We will need it for the scripts later.
 
 
 ## Register Resource Providers on Subscription
