@@ -46,11 +46,11 @@ Go to Azure -> Defender for Cloud -> Environment Settings -> Your Subscription a
 ```
 sudo mkdir -p -m 700 /var/lib/rancher/k3s/server/logs
 ```
-3. Create audit.yaml file:
+2. Create audit.yaml file:
 ```
 sudo nano /var/lib/rancher/k3s/server/audit.yaml
 ```
-and paste the following code in it:
+   and paste the following code in it:
 ```
 apiVersion: audit.k8s.io/v1
 kind: Policy
@@ -61,7 +61,7 @@ rules:
 ```
 sudo nano /etc/rancher/k3s/config.yaml
 ```
-and paste the following code in it:
+   and paste the following code in it:
 ```
 kube-apiserver-arg:
   - audit-log-path=/var/lib/rancher/k3s/server/logs/audit.log
