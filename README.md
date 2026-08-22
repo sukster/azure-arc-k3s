@@ -82,7 +82,6 @@ Download Arc Server onboarding script to Linux server
 Make sure to update the environment variables in the script.
 
 
-Run the script on K3S server
 <br>Run the script as a regular user (not with sudo).
 <br>
 ./az_connect_linux.sh
