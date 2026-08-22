@@ -57,6 +57,13 @@ kube-apiserver-arg:
   - audit-log-maxbackup=10
   - audit-log-maxsize=100
 ```
+4. Restart K3S
+<br> sudo systemctl restart k3s
+5. Verify audit logs are working
+```
+kubectl get pods -A
+sudo tail /var/lib/rancher/k3s/server/logs/audit.log
+```
 
 ## Enable Control Plane Monitoring
 This step will enable collection of audit events from K3S which are useful for security investigations.
