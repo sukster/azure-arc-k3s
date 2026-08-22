@@ -36,7 +36,7 @@ Run the script as a regular user (not with sudo). Alternatively run each script 
 Go to Azure -> Defender for Cloud -> Environment Settings -> Your Subscription and turn on Defender for Containers plan.
 
 
-## Enable Control Plan Monitoring
+## Enable Control Plane Monitoring
 This step will enable collection of audit events from K3S which are useful for security investigations.
 1. Download the ARM template to Azure admin's computer: https://raw.githubusercontent.com/sukster/azure-arc-k3s/refs/heads/main/audit_diagnostic_settings.json
 2. Go to Azure and search for "Deploy a custom template"
