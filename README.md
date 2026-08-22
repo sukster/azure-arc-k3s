@@ -24,7 +24,7 @@ Make sure to register the following resource providers on the subscription where
 Only necessary if a resource group doesn't exist.
 
 
-## Download K3S onboarding script to Linux server
+## Download onboarding script to K3S control plane server
 ```
 wget https://raw.githubusercontent.com/sukster/azure-arc-k3s/refs/heads/main/az_connect_k3s.sh
 ```
