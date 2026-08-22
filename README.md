@@ -1,2 +1,5 @@
-# azure-arc-k3s
-This repository holds scripts useful to connect K3S kubernetes to Azure Arc and setup security monitoring 
+# Deploy and connect K3S to Azure Arc
+
+## Install K3S
+Use the official quick start guide: https://docs.k3s.io/quick-start
+
