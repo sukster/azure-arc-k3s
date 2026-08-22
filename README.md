@@ -9,7 +9,7 @@ Save the App ID and Secret to a save location. We will need it for the script la
 
 ## Register Resource Providers on Subscription
 Make sure to register the following resource providers on the subscription where the Azure Arc Kubernetes resource will be created.
-1. Microsoft.Kubernetes
-2. Microsoft.KubernetesConfiguration
-3. Microsoft.ExtendedLocation
+- Microsoft.Kubernetes
+- Microsoft.KubernetesConfiguration
+- Microsoft.ExtendedLocation
 
