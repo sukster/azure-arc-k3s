@@ -14,13 +14,7 @@ export location='<Azure Region>'
 wget https://aka.ms/azcmagent -O ~/install_linux_azcmagent.sh
 
 # Install the hybrid agent
-bash ~/install_linux_azcmagent.sh
+sudo bash ~/install_linux_azcmagent.sh
 
 # Run connect command
-sudo azcmagent connect \
-  --service-principal-id "${appId}" \
-  --service-principal-secret "${password}" \
-  --resource-group "${resourceGroup}" \
-  --tenant-id "${tenantId}" \
-  --location "${location}" \
-  --subscription-id "${subscriptionId}"
+sudo azcmagent connect --service-principal-id "${appId}" --service-principal-secret "${password}" --resource-group "${resourceGroup}" --tenant-id "${tenantId}" --location "${location}" --subscription-id "${subscriptionId}"
