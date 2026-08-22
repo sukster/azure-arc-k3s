@@ -31,8 +31,14 @@ Run the script as a regular user (not with sudo). Alternatively run each script 
 
 ./az_connect_K3S.sh
 
+
 ## Enable Defender for Containers
 Go to Azure -> Defender for Cloud -> Environment Settings -> Your Subscription and turn on Defender for Containers plan.
 
-## Deploy Kubernetes Goat
+
+## Enable Container monitoring
+First create a Log Analytics Workspace that will be used for Kubernetes operational monitoring. Then go to Azure -> Monitor -> Insights -> Containers. Enable monitoring under "Unmonitored clusters". Under Monitor Settings select "Customize capabilities" and select the Log Analytics Workspace that you created. Ensure that the cluster appears under the Monitored clusters.
+
+
+## Optional: Deploy Kubernetes Goat
 For security testing install Kubernetes Goat: https://github.com/madhuakula/kubernetes-goat
