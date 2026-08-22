@@ -30,3 +30,9 @@ Make sure to update the environment variables in the script.
 Run the script as a regular user (not with sudo). Alternatively run each script line as a regular user separately in the shell.
 
 ./az_connect_K3S.sh
+
+## Enable Defender for Containers
+Go to Azure -> Defender for Cloud -> Environment Settings -> Your Subscription and turn on Defender for Containers plan.
+
+## Deploy Kubernetes Goat
+For security testing install Kubernetes Goat: https://github.com/madhuakula/kubernetes-goat
